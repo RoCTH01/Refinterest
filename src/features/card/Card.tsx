@@ -1,22 +1,22 @@
-import { useState } from 'react'
 import './Card.css'
-
-import CardImage from "./CardImage";
-import CardDescription from "./CardDescription";
-import ReactionButton from "./ReactionButton";
+import DropZone from '@/components/DropZone';
+import CardImage from './CardImage';
 
 function Card() {
-    const likeReaction = "❤️ ";
-    const [likes, setLikes] = useState(0);
-    const imageUrl = "src/assets/joucho.jpg";
-    const description = "This is Isekaijoucho!!!";
+    const imageUrl = null;
     
     return (
         <div className="card">
-            <CardImage src={imageUrl} />
-            <CardDescription description={description} />
-            <ReactionButton reaction={likeReaction} count={likes} onClick={() => setLikes(likes + 1)} />
+            <CardImageWrapper imageUrl={imageUrl} />
         </div>
+    );
+}
+
+function CardImageWrapper({imageUrl}: {imageUrl: string | null}) {
+    return (
+        <DropZone>
+            <CardImage image_src={imageUrl} />
+        </DropZone>
     );
 }
 

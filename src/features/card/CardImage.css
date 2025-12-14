@@ -8,3 +8,8 @@ img:hover {
   transform: scale(1.05);
   transition: transform 300ms;
 }
+
+.card-image-placeholder {
+    border: 2px dashed #aaa;
+    padding: 20px;
+}

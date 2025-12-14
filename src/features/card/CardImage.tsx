@@ -1,10 +1,15 @@
 import './CardImage.css';
 
 type CardImageProps = {
-    src: string;
+    image_src: string | null;
 };
 
 function CardImage(props: CardImageProps) {
-    return <img src={props.src} alt="Card Image" />;
+
+    if (props.image_src === null) {
+        return <div className="card-image-placeholder">Please drag an image here</div>;
+    }
+
+    return <img src={props.image_src ?? undefined} alt="Card Image" />;
 }
 export default CardImage;
