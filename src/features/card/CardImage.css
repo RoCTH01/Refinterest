@@ -1,0 +1,10 @@
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: transform 300ms;
+}
